@@ -4,7 +4,7 @@ $dni = htmlentities($_POST['dni']);
 
 error_reporting(0);
 
-$url = "https://dniruc.apisperu.com/api/v1/dni/".$dni."?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1heG1jbV92aXBAaG90bWFpbC5jb20ifQ.0xkHI_pPqS2CA3bK0UldWZqzjfp26jJHr7GQuJGahlU";
+$url = "https://dniruc.apisperu.com/api/v1/dni/".$dni."?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZvbnNjaWFfY29iMTkwNUBob3RtYWlsLmNvbSJ9.tpg2bE2VBIWvn2BjTc4NcFe6UrN-kbejefRfmc8goh8 ";
 
 $jsonpractica=file_get_contents($url);
 
@@ -27,13 +27,12 @@ if ($nombres) {
 		<title>Document</title>
 	</head>
 	<body>
-		<form action="registrar.php" method="POST">
-		<div>
-		<input type="text" value="<?php echo $dni ?>" name="txtDni">
-		<input type="text" value="<?php echo $nombres ?>" name="txtNombre">
-		
+		<form action="registrar.php" method="POST" class="form p-2 container col-lg-4">
+		<div class="d-flex justify-content-between">
+			<input type="text" value="<?php echo $dni ?>" name="txtDni" class="form-control w-50">
+			<input type="text" value="<?php echo $nombres ?>" name="txtNombre" class="form-control w-50">
 		</div>
-		<button type="submit">Registrar</button>
+		<button type="submit" class="btn btn-primary mt-2">Registrar</button>
 		</form>
 	</body>
 	</html>
